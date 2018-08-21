@@ -9,6 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 
-@interface ViewController : UIViewController
+@import GoogleMobileAds;
+@import iAd;
+
+@protocol gameDelegate <NSObject>
+
+-(void)showGameOver;
+-(void)showRankView;
+-(void)restartGame;
+-(void)showGameMenu;
+
+@end
+
+@interface ViewController : UIViewController<ADBannerViewDelegate,gameDelegate>
 
 @end

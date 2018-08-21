@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  InfiniteTouch
+
+  Created by irons on 2015/8/14.
+  Copyright (c) 2015年 irons. All rights reserved.
+*/
+
+"touchMode" = "点击模式";
+"touchMultiMode" = "多重点击模式";
+"zoneMode" = "区域点击模式";
+"bladeMode" = "刀刃模式";
+
+"modeUnlock" = "解锁";
+
+"cat_shoot_ad" = "cn_attack_on_gaint_cat_ad.jpg";
