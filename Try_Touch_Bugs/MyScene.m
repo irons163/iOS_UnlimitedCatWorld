@@ -34,7 +34,7 @@ const int UNLOCK_BLADE_CLEAR = 10000;
     SKSpriteNode * backgroundNode;
     NSArray * currentCatTextures;
     
-    NSMutableArray * bugs;
+    NSMutableArray<SKSpriteNode *> * bugs;
     NSMutableArray * explodePool;
     
     NSArray * explodeTextures;

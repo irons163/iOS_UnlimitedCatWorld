@@ -16,7 +16,7 @@
 
 @implementation ViewController{
     ADBannerView * adBannerView;
-    GADInterstitial *interstitial;
+//    GADInterstitial *interstitial;
     MyScene * scene;
 }
 

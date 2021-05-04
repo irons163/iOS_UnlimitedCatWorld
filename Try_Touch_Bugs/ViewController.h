@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 
-@import GoogleMobileAds;
+//@import GoogleMobileAds;
 @import iAd;
 
 @protocol gameDelegate <NSObject>

@@ -122,7 +122,6 @@
 		B583C2711B53BC7C000469F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B57795871B0DB1AB00ABE278 /* main.m */; };
 		B583C2731B53BC7C000469F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B577957B1B0DB1AB00ABE278 /* CoreGraphics.framework */; };
 		B583C2741B53BC7C000469F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B577957D1B0DB1AB00ABE278 /* UIKit.framework */; };
-		B583C2751B53BC7C000469F1 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CD87881B1C63E700621128 /* GoogleMobileAds.framework */; };
 		B583C2761B53BC7C000469F1 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B577957F1B0DB1AB00ABE278 /* SpriteKit.framework */; };
 		B583C2771B53BC7C000469F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57795791B0DB1AB00ABE278 /* Foundation.framework */; };
 		B583C2791B53BC7C000469F1 /* cat05_2.png in Resources */ = {isa = PBXBuildFile; fileRef = B57795B61B0DC38900ABE278 /* cat05_2.png */; };
@@ -193,7 +192,6 @@
 		B5CD87851B1C54E400621128 /* bg13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5CD87761B1C54E400621128 /* bg13.jpg */; };
 		B5CD87861B1C54E400621128 /* bg14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5CD87771B1C54E400621128 /* bg14.jpg */; };
 		B5CD87871B1C54E400621128 /* bg15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5CD87781B1C54E400621128 /* bg15.jpg */; };
-		B5CD87891B1C63E700621128 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CD87881B1C63E700621128 /* GoogleMobileAds.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -389,7 +387,6 @@
 		B5CD87761B1C54E400621128 /* bg13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg13.jpg; path = "../../Try_Cat_Shoot 2/Try_Cat_Shoot/bg13.jpg"; sourceTree = "<group>"; };
 		B5CD87771B1C54E400621128 /* bg14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg14.jpg; path = "../../Try_Cat_Shoot 2/Try_Cat_Shoot/bg14.jpg"; sourceTree = "<group>"; };
 		B5CD87781B1C54E400621128 /* bg15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg15.jpg; path = "../../Try_Cat_Shoot 2/Try_Cat_Shoot/bg15.jpg"; sourceTree = "<group>"; };
-		B5CD87881B1C63E700621128 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../../Downloads/GoogleMobileAdsSdkiOS-7.2.2/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -399,7 +396,6 @@
 			files = (
 				B577957C1B0DB1AB00ABE278 /* CoreGraphics.framework in Frameworks */,
 				B577957E1B0DB1AB00ABE278 /* UIKit.framework in Frameworks */,
-				B5CD87891B1C63E700621128 /* GoogleMobileAds.framework in Frameworks */,
 				B57795801B0DB1AB00ABE278 /* SpriteKit.framework in Frameworks */,
 				B577957A1B0DB1AB00ABE278 /* Foundation.framework in Frameworks */,
 			);
@@ -421,7 +417,6 @@
 			files = (
 				B583C2731B53BC7C000469F1 /* CoreGraphics.framework in Frameworks */,
 				B583C2741B53BC7C000469F1 /* UIKit.framework in Frameworks */,
-				B583C2751B53BC7C000469F1 /* GoogleMobileAds.framework in Frameworks */,
 				B583C2761B53BC7C000469F1 /* SpriteKit.framework in Frameworks */,
 				B583C2771B53BC7C000469F1 /* Foundation.framework in Frameworks */,
 			);
@@ -450,7 +445,6 @@
 			isa = PBXGroup;
 			children = (
 				B50AD0491B95B59C003D6BF1 /* appirater-master */,
-				B5CD87881B1C63E700621128 /* GoogleMobileAds.framework */,
 				B57795811B0DB1AB00ABE278 /* Try_Touch_Bugs */,
 				B57795A51B0DB1AC00ABE278 /* Try_Touch_BugsTests */,
 				B57795781B0DB1AB00ABE278 /* Frameworks */,
@@ -698,8 +692,15 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
+					B57795751B0DB1AB00ABE278 = {
+						DevelopmentTeam = T6VV6T753H;
+						ProvisioningStyle = Automatic;
+					};
 					B577959D1B0DB1AB00ABE278 = {
 						TestTargetID = B57795751B0DB1AB00ABE278;
+					};
+					B583C26A1B53BC7C000469F1 = {
+						DevelopmentTeam = T6VV6T753H;
 					};
 				};
 			};
@@ -708,6 +709,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				"zh-Hant",
@@ -1145,7 +1147,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Wen Chuan Chang (PLAAEZZ3HF)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1.2105030;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/irons/Downloads/GoogleMobileAdsSdkiOS-7.2.2",
@@ -1153,8 +1158,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Try_Touch_Bugs/Try_Touch_Bugs-Prefix.pch";
 				INFOPLIST_FILE = "Try_Touch_Bugs/Try_Touch_Bugs-Info.plist";
+				MARKETING_VERSION = 1.1;
 				PRODUCT_NAME = InfinityCats;
 				PROVISIONING_PROFILE = "e497e59c-7415-4f07-b65c-fe4bf0a62a44";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1165,7 +1172,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Wen Chuan Chang (PLAAEZZ3HF)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1.2105030;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/irons/Downloads/GoogleMobileAdsSdkiOS-7.2.2",
@@ -1173,8 +1183,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Try_Touch_Bugs/Try_Touch_Bugs-Prefix.pch";
 				INFOPLIST_FILE = "Try_Touch_Bugs/Try_Touch_Bugs-Info.plist";
+				MARKETING_VERSION = 1.1;
 				PRODUCT_NAME = InfinityCats;
 				PROVISIONING_PROFILE = "e497e59c-7415-4f07-b65c-fe4bf0a62a44";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1225,6 +1237,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = T6VV6T753H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/irons/Downloads/GoogleMobileAdsSdkiOS-7.2.2",
@@ -1243,6 +1256,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = T6VV6T753H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/irons/Downloads/GoogleMobileAdsSdkiOS-7.2.2",
