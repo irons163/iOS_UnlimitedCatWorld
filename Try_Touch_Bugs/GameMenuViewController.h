@@ -12,6 +12,7 @@
 @protocol gameDelegate;
 
 @interface GameMenuViewController : UIViewController
+
 @property (strong, nonatomic) IBOutlet UIImageView *touchMultiImage;
 @property (strong, nonatomic) IBOutlet UIImageView *zoneImage;
 @property (strong, nonatomic) IBOutlet UIImageView *BladeImage;
@@ -30,6 +31,6 @@
 @property (weak) id<gameDelegate> gameDelegate;
 @property int gameType;
 @property int64_t gameScore;
-@property (weak) MyScene* scene;
+@property (weak) MyScene *scene;
 
 @end

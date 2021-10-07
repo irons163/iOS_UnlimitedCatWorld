@@ -7,7 +7,6 @@
 //
 
 #import "GameCenterUtil.h"
-//#import "CommonUtil.h"
 
 static GameCenterUtil* instance;
 
@@ -39,8 +38,7 @@ static GameCenterUtil* instance;
 }
 
 //是否支持GameCenter
-- (BOOL) isGameCenterAvailable
-{
+- (BOOL)isGameCenterAvailable {
     Class gcClass = (NSClassFromString(@"GKLocalPlayer"));
     NSString *reqSysVer = @"4.1";
     NSString *currSysVer = [[UIDevice currentDevice] systemVersion];
@@ -50,21 +48,19 @@ static GameCenterUtil* instance;
 }
 
 //身份验证
-- (void)authenticateLocalUser:(UIViewController*)m_viewController{
+- (void)authenticateLocalUser:(UIViewController *)m_viewController {
     GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
     
     localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
-        if(error){
+        if (error) {
             NSLog(@"%@", error.description);
         }
+        
         if (viewController != nil) {
             [m_viewController presentViewController:viewController animated:YES completion:^{
-//                if(self.delegate!=nil){
-//                    [self.delegate pauseGame];
-//                }
+
             }];
-        }
-        else{
+        } else {
             if ([GKLocalPlayer localPlayer].authenticated) {
                 // Get the default leaderboard identifier.
                 
@@ -72,14 +68,11 @@ static GameCenterUtil* instance;
                     
                     if (error != nil) {
                         NSLog(@"%@", [error localizedDescription]);
-                    }
-                    else{
+                    } else {
                         NSLog(@"%@", @"authenticated no error");
                     }
                 }];
-            }
-            
-            else{
+            } else {
                 NSLog(@"%@", @"authenticated not");
                 [[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:nil];
             }
@@ -88,22 +81,20 @@ static GameCenterUtil* instance;
 }
 
 //用户变更检测
-- (void)registerFoeAuthenticationNotification{
+- (void)registerFoeAuthenticationNotification {
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(authenticationChanged) name:GKPlayerAuthenticationDidChangeNotificationName object:nil];
 }
 
-- (void)authenticationChanged{
-    if([GKLocalPlayer localPlayer].isAuthenticated ){
+- (void)authenticationChanged {
+    if ([GKLocalPlayer localPlayer].isAuthenticated) {
         NSLog(@"Authentication changed: player authenticated.");
-//        userAuthenticated = TRUE;
-    }else{
+    } else {
         NSLog(@"Authentication changed: player not authenticated");
-//        userAuthenticated = FALSE;
     }
 }
 
-- (void) reportScore: (int64_t) score forCategory: (NSString*) category{
+- (void)reportScore:(int64_t)score forCategory:(NSString *)category {
     GKScore *scoreReporter = [[GKScore alloc] initWithCategory:category];
     
     scoreReporter.value = score;
@@ -113,14 +104,13 @@ static GameCenterUtil* instance;
             
             //未能提交得分，需要保存下来后继续提交
             [self storeScoreForLater:saveSocreData];
-        }else{
+        } else {
             NSLog(@"提交成功");
         }
-//        [CommonUtil resetGameRecoder:[CommonUtil sharedInstance]];
     }];
 }
 
-- (void)storeScoreForLater:(NSData *)scoreData{
+- (void)storeScoreForLater:(NSData *)scoreData {
     NSMutableArray *savedScoresArray = [[NSMutableArray alloc] initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"savedScores"]];
     
     [savedScoresArray addObject:scoreData];
@@ -128,29 +118,27 @@ static GameCenterUtil* instance;
 }
 
 //重新提交分数
-- (void)submitAllSavedScores{
+- (void)submitAllSavedScores {
     NSMutableArray *savedScoreArray = [[NSMutableArray alloc] initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"savedScores"]];
     
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"savedScores"];
     
-    for(NSData *scoreData in savedScoreArray){
+    for (NSData *scoreData in savedScoreArray) {
         GKScore *scoreReporter = [NSKeyedUnarchiver unarchiveObjectWithData:scoreData];
         
         [scoreReporter reportScoreWithCompletionHandler:^(NSError *error) {
-            if(error != nil){
+            if (error != nil) {
                 NSData *saveSocreData = [NSKeyedArchiver archivedDataWithRootObject:scoreReporter];
                 //未能提交得分，需要保存下来后继续提交
                 [self storeScoreForLater:saveSocreData];
-            }else{
+            } else {
                 NSLog(@"提交成功");
-                
-                
             }
         }];
     }
 }
 
-- (void)showGameCenter:(UIViewController*)viewController{
+- (void)showGameCenter:(UIViewController*)viewController {
     GKGameCenterViewController *gameView = [[GKGameCenterViewController alloc] init];
     if(gameView != nil){
         gameView.gameCenterDelegate = self;
@@ -159,14 +147,12 @@ static GameCenterUtil* instance;
         [gameView setLeaderboardTimeScope:GKLeaderboardTimeScopeAllTime];
         
         [viewController presentViewController:gameView animated:YES completion:^{
-//            if(self.delegate!=nil){
-//                [self.delegate pauseGame];
-//            }
+
         }];
     }
 }
 
-- (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController{
+- (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController {
     [gameCenterViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

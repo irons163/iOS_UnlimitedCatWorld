@@ -11,12 +11,12 @@
 
 @interface MyScene : SKScene
 
-@property (nonatomic) SKSpriteNode * backgroundNode;
+@property (nonatomic) SKSpriteNode *backgroundNode;
 
 @property (weak) id<gameDelegate> gameDelegate;
 
--(void)setClearType:(int)_clearType;
--(int)getClearType;
--(int64_t)getGameScore;
+- (void)setClearType:(int)_clearType;
+- (int)getClearType;
+- (int64_t)getGameScore;
 
 @end

@@ -9,15 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 
-//@import GoogleMobileAds;
 @import iAd;
 
 @protocol gameDelegate <NSObject>
 
--(void)showGameOver;
--(void)showRankView;
--(void)restartGame;
--(void)showGameMenu;
+- (void)showGameOver;
+- (void)showRankView;
+- (void)restartGame;
+- (void)showGameMenu;
 
 @end
 
